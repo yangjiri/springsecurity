@@ -12,6 +12,9 @@
 *  DB - Postgres
 *  IDE – Intellij 
 
+## :memo:学習メモ
+[notionにメモ](https://www.notion.so/a820f14d4eb644fca04c355df46d5268?v=7732772c81854d169161000a9bca3271)
+
 ## :octocat:期間
 2020年7月22日～
 
