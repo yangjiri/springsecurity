@@ -5,9 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+// DBに保存するためのEntity。DBテーブルとマッピングされる。
 @Entity // JPA技術
 @Data // Lombokアノテーション。getter,setter自動生成してくれる。
-// DBに保存するためのEntity。DBテーブルとマッピングされる。
 public class Account {
 
     @Id

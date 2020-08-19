@@ -37,8 +37,11 @@ public class UserController {
         ModelMapper modelMapper = new ModelMapper();
         // accountDtoのデータをaccountEntityに移す(マッピング)
         Account account = modelMapper.map(accountDto, Account.class);
+
         // passwordは暗号化
         account.setPassword(passwordEncoder.encode(account.getPassword()));
+        userService.createUser(account);
+
         return "redirect:/";
     }
 
