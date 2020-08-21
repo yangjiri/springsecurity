@@ -32,21 +32,21 @@ public class UserController {
 
         return "user/login/register";
     }
-// エラーになる部分コメントアウト
-//    // 会員登録時にDBに保存
-//    @PostMapping(value="/users")
-//    public String createUser(AccountDto accountDto) throws Exception {
-//
-//        // accountDtoのデータをaccountEntityに移す(マッピング)
-//        ModelMapper modelMapper = new ModelMapper();
-//        Account account = modelMapper.map(accountDto, Account.class);
-//
-//        // passwordは暗号化
-//        account.setPassword(passwordEncoder.encode(accountDto.getPassword()));
-//
-//        userService.createUser(account);
-//
-//        return "redirect:/";
-//    }
+
+    // 会員登録時にDBに保存
+    @PostMapping(value="/users")
+    public String createUser(AccountDto accountDto) throws Exception {
+
+        // accountDtoのデータをaccountEntityに移す(マッピング)
+        ModelMapper modelMapper = new ModelMapper();
+        Account account = modelMapper.map(accountDto, Account.class);
+
+        // passwordは暗号化
+        account.setPassword(passwordEncoder.encode(accountDto.getPassword()));
+
+        userService.createUser(account);
+
+        return "redirect:/";
+    }
 
 }
