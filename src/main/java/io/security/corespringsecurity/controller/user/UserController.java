@@ -41,7 +41,7 @@ public class UserController {
         ModelMapper modelMapper = new ModelMapper();
         Account account = modelMapper.map(accountDto, Account.class);
 
-        // passwordは暗号化
+        // passwordをEncodingして暗号化
         account.setPassword(passwordEncoder.encode(accountDto.getPassword()));
 
         userService.createUser(account);
