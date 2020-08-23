@@ -9,21 +9,21 @@
 <div id="maininner"><!-- maininner (s)-->
   <div class="cc-tab-con">
     <a href="javascript:tabChange('1');" class="cc-tab-item">ユーザー管理</a>		<!--// on : 現在位置 //-->
-    <a href="javascript:tabChange('2');" class="cc-tab-item">권한관리</a>
-    <a href="javascript:void(0);" class="cc-tab-item on">리소스관리</a>
+    <a href="javascript:tabChange('2');" class="cc-tab-item">権限管理</a>
+    <a href="javascript:void(0);" class="cc-tab-item on">リソース管理</a>
   </div>
   <div class="tbl_wrp">
 <form class="form-horizontal" th:action="@{/admin/resources}" method="post" th:object="${resources}">
   <input th:type="hidden" name="id" th:value="*{id}" />
   <div class="form-group">
-    <label for="resourceName" class="col-sm-2 control-label">리소스명</label>
+    <label for="resourceName" class="col-sm-2 control-label">リソース名</label>
     <div class="col-sm-10">
       <input type="text" class="form-control input-large" name="resourceName" id="resourceName" placeholder="리소스명" th:value="*{resourceName}">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="resourceType" class="col-sm-2 control-label">리소스타입</label>
+    <label for="resourceType" class="col-sm-2 control-label">リソースタイプ</label>
     <div class="col-sm-10">
       <input type="text" class="form-control input-large" name="resourceType" id="resourceType" placeholder="리소스타입" th:value="*{resourceType}">
     </div>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="roleName" class="col-sm-2 control-label">권한</label>
+    <label for="roleName" class="col-sm-2 control-label">権限</label>
     <div class="col-sm-10">
       <select class="custom-select" name="roleName" id="roleName">
         <option th:each="role: ${roleList}"
@@ -53,10 +53,10 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-1 col-sm-10">
-      <button type="Submit" class="btn btn-dark btn-lg">등록</button>
+      <button type="Submit" class="btn btn-dark btn-lg">登録</button>
       <a th:href="@{/logout}">
-      <a class="btn btn-dark btn-lg" style="margin:10;" th:href="@{/admin/resources}">목록 </a>
-      <a class="btn btn-dark btn-lg" style="margin:10;" th:href="@{'/admin/resources/delete/' + *{id}}">삭제</a>
+      <a class="btn btn-dark btn-lg" style="margin:10;" th:href="@{/admin/resources}">リスト </a>
+      <a class="btn btn-dark btn-lg" style="margin:10;" th:href="@{'/admin/resources/delete/' + *{id}}">削除</a>
     </div>
   </div>
 </form>
